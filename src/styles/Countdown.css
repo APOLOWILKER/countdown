@@ -1,0 +1,70 @@
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 23em;
+  width: 23em;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  border: 0.5em solid rgb(30, 255, 0);
+  margin: 1.3em auto;
+}
+
+.dislplay-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(254, 255, 255);
+  font-family: 'Quantico';
+  font-size: 4em;
+  margin: 0.9em 0.5em;
+}
+
+.line {
+  color: red;
+  width: 99%;
+  height: 0.5em;
+  background-color: rgb(30, 255, 0);
+  border: none;
+  border-radius: 1em;
+}
+
+.container-btns {
+  display: flex;
+  align-items: center;
+}
+
+.btn-style {
+  margin-bottom: 3em;
+  height: 6em;
+  width: 7em;
+  border: none;
+  background-color: rgb(11, 13, 13);
+}
+
+.btn-play {
+  border-radius: 15em;
+}
+
+.btn-stop {
+  border-radius: 15em;
+}
+
+.icon-style {
+  color:rgb(30, 255, 0);
+  margin: 0.5em;
+  zoom: 150%;
+} 
+
+.container-buttons-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.style-icon-modify-time {
+  color:rgb(30, 255, 0);
+  margin: 0.5em;
+  zoom: 160%;
+}
