@@ -1,15 +1,19 @@
-
 .style-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0.3em solid rgb(34, 248, 5);
-  height: 3em;
-  width: 8em;
+  height: 2.5em;
+  width: 6em;
   border-radius: 0.3em;
   background-color: rgb(18, 18, 18);
   color: rgb(254, 255, 255);
   font-weight: 900;
-  font-size: 1.2em;
   font-family: 'Quantico';
+}
+
+.style-times-btns {
+  border-radius: 2em;
+  height: 4em;
+  width: 4em;
 }
