@@ -28,8 +28,10 @@ export default class Init extends Component {
   handleChange({ target }) {
     const { name } = target; // pego o nome do alvo 
     const value = target.value; // pego o valor do input alvo
-  this.setState({ [ name ]: value, valueM: value }); // altera a chave ValueM que é passada como props para o componente minutes.
+  this.setState({ [ name ]: value }); // altera a chave ValueM que é passada como props para o componente minutes.
   }
+
+  // handleClick()
 
   render() {
     const { valueM, valueS, timerBtns } = this.state;
@@ -43,10 +45,10 @@ export default class Init extends Component {
           <SecondsTime seconds={ valueS } onChange={ this.handleChange } />
         </div>
         <div className="container-time-btns">
-        <ButtonsTime value={ timeFive } name={ timeFive } onClick={ this.handleChange } />
-        <ButtonsTime value={ timeSeven } name={ timeSeven } onClick={ this.handleChange } />
-        <ButtonsTime value={ timeTen } name={ timeTen } onClick={ this.handleChange } />
-        <ButtonsTime value={ timeFifteen } name={ timeFifteen } onClick={ this.handleChange } />
+        <ButtonsTime value={ timeFive } onClick={ this.handleChange } />
+        <ButtonsTime value={ timeSeven }  onClick={ this.handleChange } />
+        <ButtonsTime value={ timeTen }  onClick={ this.handleChange } />
+        <ButtonsTime value={ timeFifteen }  onClick={ this.handleChange } />
         </div>
         <div className="container-buttons">
         <Link to={{

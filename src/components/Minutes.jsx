@@ -10,6 +10,8 @@ export default class MinutesTime extends Component {
       <label htmlFor="MINUTES">
       <input
         className="timer-inputs"
+        min='00'
+        max='59'
         type="number"
         name="valueM"
         id="MINUTES"

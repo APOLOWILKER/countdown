@@ -10,10 +10,12 @@
   color: rgb(254, 255, 255);
   font-weight: 900;
   font-family: 'Quantico';
+  cursor: pointer;
 }
 
 .style-times-btns {
   border-radius: 2em;
   height: 4em;
   width: 4em;
+  cursor: pointer;
 }

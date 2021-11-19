@@ -10,7 +10,7 @@ export default class ButtonsTime extends Component {
       <input
       className="style-btn style-times-btns"
       type="button"
-      name={ value }
+      name='valueM'
       value={ value }
       onClick={ onClick }
       >

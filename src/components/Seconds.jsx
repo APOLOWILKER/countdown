@@ -10,6 +10,8 @@ export default class SecondsTime extends Component {
     <label htmlFor="SECONDS">
           <input
             className="timer-inputs"
+            min='0'
+            max='59'
             type="number"
             id="SECONDS"
             name="valueS" // tem o mesmo nome do state
