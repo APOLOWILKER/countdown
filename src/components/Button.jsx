@@ -5,7 +5,7 @@ import '../styles/BtnStyle.css';
 
 class Button extends Component {
   render() { 
-    const {onClick, className, text, value, name } = this.props
+    const {onClick, className, text, value, name, icon, disabled } = this.props
     return ( 
       <button
         className={className}
@@ -13,8 +13,9 @@ class Button extends Component {
         onClick={onClick}
         value={value}
         name={name}
+        disabled={disabled}
       >
-        {text}
+        {icon!== undefined ? icon() : text}
       </button>
     );
   }
@@ -26,6 +27,8 @@ Button.propTypes = {
   text: propTypes.string,
   value: propTypes.string,
   name: propTypes.string,
+  icon: propTypes.func,
+  disabled: propTypes.bool,
 }
 
 export default Button;

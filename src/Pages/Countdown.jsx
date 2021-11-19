@@ -47,11 +47,13 @@ export default class Countdown extends Component {
     this.decrementTime = setInterval(() => {
     let totalSeconds = this.convertTime();
     console.log(totalSeconds);
-    totalSeconds -= 1
-    this.setState({
-      minutes: String(Math.floor(totalSeconds / 60)).padStart(2, '0'),
-      seconds: String((totalSeconds % 60)).padStart(2, '0'),
-    })
+    if(totalSeconds > 0) {
+      totalSeconds -= 1
+      this.setState({
+        minutes: String(Math.floor(totalSeconds / 60)).padStart(2, '0'),
+        seconds: String((totalSeconds % 60)).padStart(2, '0'),
+      })
+    }   
     if(totalSeconds === 0) {
       clearInterval(this.decrementTime);
     }
@@ -62,13 +64,15 @@ export default class Countdown extends Component {
     clearInterval(this.decrementTime);
   }
 
+  
   stopTime() {
     clearInterval(this.decrementTime);
     this.setState({
       isButtonDisabled: false,
     })
   }
-
+  
+  
   addOneMinute() {
     const {minutes} = this.state
     const minutAdd = Number(minutes) +1;
@@ -76,7 +80,7 @@ export default class Countdown extends Component {
       minutes: String(minutAdd).padStart(2, '0')
     });
   }
-
+  
   rmvOneMinute() {
     const {minutes} = this.state
     const minutMin = Number(minutes) -1;
@@ -85,7 +89,10 @@ export default class Countdown extends Component {
     });
   }
   
+  
   render() {
+    const stopIcon = () => (<FaPause className="icon-style" />);
+    const playIcon = () => ( <FaPlay className="icon-style" /> );
     const {minutes, seconds, isButtonDisabled} = this.state
     return(
       <div>
@@ -102,22 +109,36 @@ export default class Countdown extends Component {
           {/* transformar ele em progress Bar */}
           
           <div className="container-btns">
-          <button 
+          {/* <button 
             disabled={isButtonDisabled}
             type="button"
             className="btn-style btn-play"
             onClick={this.decrementCountdown}
           >
             <FaPlay className="icon-style"/>
-          </button>
+          </button> */}
+
+          <Button
+            disabled={isButtonDisabled}
+            className="btn-style btn-play"
+            onClick={this.decrementCountdown}
+            icon={playIcon}
+          />
+
+          <Button
+            disabled={isButtonDisabled}
+            className="btn-style btn-play"
+            onClick={this.stopTime}
+            icon={stopIcon}
+          />
           
-          <button 
+          {/* <button 
             type="button"
             className="btn-style btn-stop"
             onClick={this.stopTime}
             >
             <FaPause className="icon-style" />
-          </button>
+          </button> */}
           </div>
         </div>
 
