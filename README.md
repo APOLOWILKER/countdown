@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# DESAFIO CRONOMETRO OU COUNTDOWN
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+## Requisitos
 
 In the project directory, you can run:
 

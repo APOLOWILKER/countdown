@@ -3,9 +3,8 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './Pages/Home';
 import Countdown from './Pages/Countdown';
 
-
-
 export default class App extends Component {
+
   render() {
     return(
       <BrowserRouter>
@@ -17,4 +16,3 @@ export default class App extends Component {
     )
   }
 }
-

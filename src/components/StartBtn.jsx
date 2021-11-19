@@ -9,7 +9,7 @@ export default class StartBtn extends Component {
       className="style-btn"
       type="button"
       >
-        START
+        NEXT
       </button>
     )
   }
