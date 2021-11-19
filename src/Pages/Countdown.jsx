@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import "../styles/Countdown.css"
 import { FaPlay, FaPause, FaClock } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import AddBtn from "../components/AddBtn";
-import MinBtn from "../components/MinBtn";
+// import AddBtn from "../components/AddBtn";
+// import MinBtn from "../components/MinBtn";
 import PropTypes from 'prop-types';
+import Button from "../components/Button";
 
 export default class Countdown extends Component {
   constructor() {
@@ -109,6 +110,7 @@ export default class Countdown extends Component {
           >
             <FaPlay className="icon-style"/>
           </button>
+          
           <button 
             type="button"
             className="btn-style btn-stop"
@@ -120,11 +122,15 @@ export default class Countdown extends Component {
         </div>
 
         <div className="container-buttons-count">
-        <AddBtn
+        <Button
+          className="style-btn"
           onClick={this.addOneMinute}
+          text="+1"
         />
-        <MinBtn
+        <Button
+          className="style-btn"
           onClick={this.rmvOneMinute}
+          text="-1"
         />
         </div>        
       </div>

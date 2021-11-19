@@ -4,15 +4,28 @@ import '../styles/BtnStyle.css';
 
 
 class Button extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
   render() { 
+    const {onClick, className, text, value, name } = this.props
     return ( 
-
+      <button
+        className={className}
+        type="button"
+        onClick={onClick}
+        value={value}
+        name={name}
+      >
+        {text}
+      </button>
     );
   }
+}
+
+Button.propTypes = {
+  onClick: propTypes.func,
+  className: propTypes.string.isRequired,
+  text: propTypes.string,
+  value: propTypes.string,
+  name: propTypes.string,
 }
 
 export default Button;
