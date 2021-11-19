@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import "../styles/Countdown.css"
 import { FaPlay, FaPause, FaClock } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-import AddBtn from "../components/AddBtn";
-import MinBtn from "../components/MinBtn";
+// import AddBtn from "../components/AddBtn";
+// import MinBtn from "../components/MinBtn";
 import PropTypes from 'prop-types';
+import Button from "../components/Button";
 
 export default class Countdown extends Component {
   constructor() {
@@ -46,11 +47,13 @@ export default class Countdown extends Component {
     this.decrementTime = setInterval(() => {
     let totalSeconds = this.convertTime();
     console.log(totalSeconds);
-    totalSeconds -= 1
-    this.setState({
-      minutes: String(Math.floor(totalSeconds / 60)).padStart(2, '0'),
-      seconds: String((totalSeconds % 60)).padStart(2, '0'),
-    })
+    if(totalSeconds > 0) {
+      totalSeconds -= 1
+      this.setState({
+        minutes: String(Math.floor(totalSeconds / 60)).padStart(2, '0'),
+        seconds: String((totalSeconds % 60)).padStart(2, '0'),
+      })
+    }   
     if(totalSeconds === 0) {
       clearInterval(this.decrementTime);
     }
@@ -61,13 +64,15 @@ export default class Countdown extends Component {
     clearInterval(this.decrementTime);
   }
 
+  
   stopTime() {
     clearInterval(this.decrementTime);
     this.setState({
       isButtonDisabled: false,
     })
   }
-
+  
+  
   addOneMinute() {
     const {minutes} = this.state
     const minutAdd = Number(minutes) +1;
@@ -75,7 +80,7 @@ export default class Countdown extends Component {
       minutes: String(minutAdd).padStart(2, '0')
     });
   }
-
+  
   rmvOneMinute() {
     const {minutes} = this.state
     const minutMin = Number(minutes) -1;
@@ -84,7 +89,10 @@ export default class Countdown extends Component {
     });
   }
   
+  
   render() {
+    const stopIcon = () => (<FaPause className="icon-style" />);
+    const playIcon = () => ( <FaPlay className="icon-style" /> );
     const {minutes, seconds, isButtonDisabled} = this.state
     return(
       <div>
@@ -101,30 +109,49 @@ export default class Countdown extends Component {
           {/* transformar ele em progress Bar */}
           
           <div className="container-btns">
-          <button 
+          {/* <button 
             disabled={isButtonDisabled}
             type="button"
             className="btn-style btn-play"
             onClick={this.decrementCountdown}
           >
             <FaPlay className="icon-style"/>
-          </button>
-          <button 
+          </button> */}
+
+          <Button
+            disabled={isButtonDisabled}
+            className="btn-style btn-play"
+            onClick={this.decrementCountdown}
+            icon={playIcon}
+          />
+
+          <Button
+            disabled={isButtonDisabled}
+            className="btn-style btn-play"
+            onClick={this.stopTime}
+            icon={stopIcon}
+          />
+          
+          {/* <button 
             type="button"
             className="btn-style btn-stop"
             onClick={this.stopTime}
             >
             <FaPause className="icon-style" />
-          </button>
+          </button> */}
           </div>
         </div>
 
         <div className="container-buttons-count">
-        <AddBtn
+        <Button
+          className="style-btn"
           onClick={this.addOneMinute}
+          text="+1"
         />
-        <MinBtn
+        <Button
+          className="style-btn"
           onClick={this.rmvOneMinute}
+          text="-1"
         />
         </div>        
       </div>

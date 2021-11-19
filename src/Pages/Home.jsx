@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import SecondsTime from '../components/Seconds';
-import StartBtn from '../components/StartBtn';
-import MinutesTime from '../components/Minutes';
+// import SecondsTime from '../components/Seconds';
+// import StartBtn from '../components/StartBtn';
+import InputTimes from '../components/InputTimes';
 import "../styles/Home.css"
-import ButtonsTime from '../components/ButtonsTime';
+// import ButtonsTime from '../components/ButtonsTime';
+import Button from '../components/Button';
 
 
 export default class Init extends Component {
@@ -41,14 +42,14 @@ export default class Init extends Component {
         <Header />
         <h2 className="text-home">SET TIME</h2>
         <div className="container-times">
-          <MinutesTime minutes={ valueM } onChange={ this.handleChange } onClick={ this.handleChange } />
-          <SecondsTime seconds={ valueS } onChange={ this.handleChange } />
+          <InputTimes value={ valueM } name="valueM" id="MINUTES" onChange={ this.handleChange }  />
+          <InputTimes value={ valueS } name="valueS" id="SECONDS" onChange={ this.handleChange } />
         </div>
         <div className="container-time-btns">
-        <ButtonsTime value={ timeFive } onClick={ this.handleChange } />
-        <ButtonsTime value={ timeSeven }  onClick={ this.handleChange } />
-        <ButtonsTime value={ timeTen }  onClick={ this.handleChange } />
-        <ButtonsTime value={ timeFifteen }  onClick={ this.handleChange } />
+        <Button className="style-btn style-times-btns" value={ timeFive } text="05" name="valueM" onClick={ this.handleChange } />
+        <Button className="style-btn style-times-btns" value={ timeSeven } text="07" name="valueM" onClick={ this.handleChange } />
+        <Button className="style-btn style-times-btns" value={ timeTen } text="10" name="valueM" onClick={ this.handleChange } />
+        <Button className="style-btn style-times-btns" value={ timeFifteen } text="15" name="valueM" onClick={ this.handleChange } />
         </div>
         <div className="container-buttons">
         <Link to={{
@@ -58,7 +59,10 @@ export default class Init extends Component {
             seconds: valueS
           }
         }}>
-          <StartBtn />
+          <Button
+          className="style-btn"
+          text="NEXT"
+          />
         </Link>
         </div>
       </div>
