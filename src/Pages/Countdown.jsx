@@ -126,7 +126,6 @@ export default class Countdown extends Component {
           />
 
           <Button
-            disabled={isButtonDisabled}
             className="btn-style btn-play"
             onClick={this.stopTime}
             icon={stopIcon}
