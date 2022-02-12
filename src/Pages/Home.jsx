@@ -32,7 +32,6 @@ export default class Init extends Component {
   this.setState({ [ name ]: value }); // altera a chave ValueM que é passada como props para o componente minutes.
   }
 
-  // handleClick()
 
   render() {
     const { valueM, valueS, timerBtns } = this.state;

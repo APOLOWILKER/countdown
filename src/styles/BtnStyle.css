@@ -17,5 +17,6 @@
   border-radius: 2em;
   height: 4em;
   width: 4em;
+  margin: 10px;
   cursor: pointer;
 }
