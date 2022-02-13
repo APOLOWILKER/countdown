@@ -44,7 +44,7 @@ Clone o projeto
 Entre no diretório do projeto
 
 ```bash
-  cd trybe-timer/
+  cd countdown/
 ```
 
 Instale as dependências
