@@ -38,7 +38,7 @@ https://countdown-apolowilker.vercel.app/
 Clone o projeto
 
 ```bash
-  git clone https://github.com/GeZudo/trybe-timer.git
+  https://github.com/APOLOWILKER/countdown.git
 ```
 
 Entre no diretório do projeto
